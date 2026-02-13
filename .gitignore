@@ -1,0 +1,17 @@
+node_modules
+dist
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.npmrc
+.DS_Store
+coverage
+.vscode
+.idea
+*.log
+*.tgz
+
+
+.npmrc

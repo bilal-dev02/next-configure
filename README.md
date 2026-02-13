@@ -130,6 +130,8 @@ If you run into a bug or want to request a feature:
   - Your Node.js and Next.js versions.
   - Any relevant CLI output.
 
+Source code and issue tracker: https://github.com/bilal-dev02/next-configure
+
 ---
 
 ## License

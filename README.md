@@ -4,32 +4,23 @@ Minimal CLI tool to configure Next.js projects quickly and cleanly.
 
 ## Install
 
-Run directly with `npx` from your Next.js project root:
-
 ```bash
 npx next-configure
 ```
 
-This should be executed inside an existing Next.js App Router project (where `package.json` with `next` is present).
+Run from your Next.js App Router project root.
 
----
+## Features
 
-## Overview
-
-`next-configure` automates common setup tasks you usually repeat after running `create-next-app`:
-
-- Detects a valid Next.js App Router project.
-- Optionally installs and wires up `shadcn/ui`.
-- Creates standard development folders.
-- Generates a Tailwind v4–compatible theme in `globals.css` from your brand colors.
-
-The goal is to speed up setup while staying minimal and under your control.
-
----
+- Detects Next.js App Router project automatically
+- Optional shadcn/ui installation
+- Creates standard folders: `components`, `hooks`, `utils`
+- Detects `src` directory and places folders accordingly
+- Generates Tailwind v4 theme from primary and secondary colors
+- Automatically creates light and dark color variants
+- Overwrites `globals.css` with complete theme system
 
 ## CLI Demo
-
-Example interaction:
 
 ```bash
 $ npx next-configure
@@ -51,88 +42,23 @@ $ npx next-configure
 ✔ Setup complete
 ```
 
----
+## What It Generates
 
-## What It Configures
+Creates folders: `components`, `hooks`, `utils` (inside `src/` if it exists, otherwise at root).
 
-### Folders
-
-If you opt in:
-
-- When `src/` exists:
-  - `src/components`
-  - `src/hooks`
-  - `src/utils`
-- Otherwise:
-  - `components`
-  - `hooks`
-  - `utils`
-
-Existing folders are left as-is; missing ones are created.
-
-### Theme in `globals.css`
-
-If you choose to set a color theme:
-
-- Locates one of:
-  - `src/app/globals.css`
-  - `app/globals.css`
-- Overwrites it with:
-  - Tailwind v4–style imports:
-    - `@import "tailwindcss";`
-    - `@import "tw-animate-css";`
-  - A theme based on CSS variables:
-    - Primary and secondary colors (from your input).
-    - Automatically generated light and dark variants.
-  - Utility classes, for example:
-    - `bg-primary`, `bg-secondary`
-    - `text-primary`, `text-secondary`
-
-If `globals.css` is not found in `app/` or `src/app/`, the CLI exits with a clear error.
-
----
-
-## Design Principles
-
-- Minimal surface area.
-- No enforced application architecture.
-- Does not touch layout or routing files.
-- Uses a small, focused dependency set.
-- All major actions are opt-in via prompts.
-
----
+Generates theme in `globals.css` with Tailwind v4 imports, CSS variables for primary and secondary colors, light and dark variants, and utility classes like `bg-primary`, `text-primary`, `bg-secondary`, `text-secondary`.
 
 ## Requirements
 
-- Node.js **18+**
-- Next.js **13+** with **App Router**
-- Tailwind v4-compatible setup with `globals.css` under `app/` or `src/app/`
-
----
+- Node.js 18+
+- Next.js 13+ with App Router
+- `globals.css` in `app/` or `src/app/`
 
 ## Contributing
 
-This project is open source. Contributions are welcome.
+Contributions welcome. For major changes, open an issue first.
 
-- For substantial changes, please open an issue first to discuss the direction.
-- For small fixes or improvements, submit a pull request with a clear description.
-
-Please keep changes aligned with the goals of being minimal, predictable, and Next.js App Router–focused.
-
----
-
-## Issues
-
-If you run into a bug or want to request a feature:
-
-- Open an issue on GitHub with:
-  - Steps to reproduce (if applicable).
-  - Your Node.js and Next.js versions.
-  - Any relevant CLI output.
-
-Source code and issue tracker: https://github.com/bilal-dev02/next-configure
-
----
+Source code: https://github.com/bilal-dev02/next-configure
 
 ## License
 
